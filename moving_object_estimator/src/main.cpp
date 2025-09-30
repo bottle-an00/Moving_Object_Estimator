@@ -1,4 +1,5 @@
-#include "moving_object_estimator/sync_node.hpp"
+// #include "moving_object_estimator/sync_node.hpp"
+#include "moving_object_estimator/mos_sync_node.hpp"
 
 int main(int argc, char **argv)
 {
