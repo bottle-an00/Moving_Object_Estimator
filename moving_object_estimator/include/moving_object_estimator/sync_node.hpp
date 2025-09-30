@@ -41,12 +41,11 @@ class SyncNode : public rclcpp::Node{
         /*For checking dropped messages count*/
         void scan_callback(const LaserScan::ConstSharedPtr& scan);
         void odom_callback(const Odometry::ConstSharedPtr& odom);
-
         
         message_filters::Subscriber<LaserScan> scan_sub_;
         message_filters::Subscriber<Odometry> odom_sub_;
         std::shared_ptr<message_filters::Synchronizer<ApproxPolicy>> sync_;
-        
+
         /*For checking dropped messages count*/
         rclcpp::Subscription<LaserScan>::SharedPtr only_scan_sub_;
         rclcpp::Subscription<Odometry>::SharedPtr only_odom_sub_;
