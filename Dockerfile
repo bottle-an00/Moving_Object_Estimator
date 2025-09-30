@@ -81,7 +81,7 @@ RUN cat /tmp/bashrc_config_temp.txt >> /root/.bashrc && \
 # 7. (선택 사항) 필요한 ROS2 패키지 및 사용자 코드 추가
 WORKDIR /moving_object_estimator_ws
 COPY . .
-RUN apt-get update && rosdep install --from-paths src --ignore-src -r -y && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && rosdep install --from-paths . --ignore-src -r -y && rm -rf /var/lib/apt/lists/*
 
 # 8. 컨테이너 시작 시 기본 명령 설정 (선택 사항)
 CMD ["bash"]
